@@ -107,6 +107,14 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+
+  transition: opacity 250ms ease, visibility 150ms ease;
+}
+
+.backdrop.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
 }
 
 .modal {
@@ -485,6 +493,29 @@ body {
   height: 294px;
   left: 215px;
   top: 1061px;
+}
+
+.activity-name-block {
+  position: relative;
+}
+
+.activity-name {
+  width: 370px;
+  height: 70px;
+  bottom: 0;
+
+  text-transform: uppercase;
+  font-size: 14px;
+  line-height: 16px;
+  color: var(--primary-white-color);
+
+  background-color: rgba(47, 48, 58, 0.8);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: absolute;
 }
 
 /* знакомство с командой */

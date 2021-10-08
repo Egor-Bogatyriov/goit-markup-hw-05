@@ -55,7 +55,7 @@
         class="hero">
             <div class="container hero-container">
                 <h1 class="hero-item">Эффективные решения для вашего бизнеса</h1>
-                <button class="hero-btn" type="button">Заказать услугу</button>
+                <button class="hero-btn" data-modal-open type="button">Заказать услугу</button>
             </div>
         </section>
 
@@ -110,23 +110,24 @@
             <div class="container">
                 <h2 class="activity-title">Чем мы занимаемся</h2>
             <ul class="flex-list list">
+                <div class="activity-name-block">
+                    <li class="flex-item">
+                        <img class="activity-img" src="./images/box.jpg" alt="процесс набора кода на планшете" width="370" height="294">
+                        <h2 class="activity-name">Десктопные приложения</h2>
+                    </li>
+                </div>
                 <li class="flex-item">
-                    <img class="activity-img" src="./images/box.jpg" 
-                    alt="процесс набора кода на планшете" 
-                    width="370"
-                    height="294">
+                    <div class="activity-name-block">
+                        <img class="activity-img" src="./images/box2.jpg" alt="выбор стилистики на мобильное устройство" width="370"
+                            height="294">
+                        <h2 class="activity-name">Мобильные приложения</h2>
+                    </div>
                 </li>
                 <li class="flex-item">
-                    <img class="activity-img" src="./images/box2.jpg" 
-                    alt="выбор стилистики на мобильное устройство" 
-                    width="370"
-                    height="294">
-                </li>
-                <li class="flex-item">
-                    <img class="activity-img" src="./images/box3.jpg" 
-                    alt="выбор цветовой гаммы" 
-                    width="370"
-                    height="294">
+                    <div class="activity-name-block">
+                        <img class="activity-img" src="./images/box3.jpg" alt="выбор цветовой гаммы" width="370" height="294">
+                        <h2 class="activity-name">Дизайнерские решения</h2>
+                    </div>
                 </li>
             </ul>
             </div>
@@ -429,14 +430,15 @@
     </div>
     </div>
     </footer>
-    <div class="backdrop">
+    <div class="backdrop is-hidden" data-modal>
         <div class="modal">
-            <button type="button" class="close-btn">
+            <button type="button" class="close-btn" data-modal-close>
                 <svg class="svg-btn">
                     <use href="./images/icon-svg/sprite.svg#icon-close-black"></use>
                 </svg>
             </button>
         </div>
     </div>
+    <script src="./js/modal.js"></script>
 </body>
 </html>
