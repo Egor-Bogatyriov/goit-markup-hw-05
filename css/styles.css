@@ -108,7 +108,8 @@ body {
   align-items: center;
   justify-content: center;
 
-  transition: opacity 250ms ease, visibility 150ms ease;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 150ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .backdrop.is-hidden {
@@ -117,12 +118,21 @@ body {
   pointer-events: none;
 }
 
+.backdrop.is-hidden .modal {
+  opacity: 0;
+  transform: scale(0);
+}
+
 .modal {
   width: 528px;
   min-height: 581px;
   background-color: var(--primary-white-color);
   border-radius: 4px;
   position: relative;
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1) transform 250ms
+    cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .close-btn {
@@ -154,6 +164,12 @@ body {
   margin-left: auto;
 }
 
+.header-contacts-list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
 .header-link {
   display: block;
   padding-top: 32px;
@@ -164,7 +180,7 @@ body {
   letter-spacing: 0.02em;
   color: var(--primary-text-color);
   position: relative;
-  transition: color 250ms ease;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header-link:hover,
@@ -185,11 +201,13 @@ body {
 }
 
 .header-contacts-link {
+  display: flex;
+  align-items: center;
   font-weight: 500;
   line-height: 1.14;
   letter-spacing: 0.02em;
   color: var(--secondaty-text-color);
-  transition: color 250ms ease;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .header-contacts-link:hover,
@@ -233,7 +251,7 @@ body {
 
 .header-contacts-phone-icon {
   width: 10px;
-  height: 12px;
+  height: 16px;
   fill: currentColor;
   margin-right: 10px;
 }
@@ -270,7 +288,7 @@ body {
   font-weight: normal;
   line-height: 1.72;
   color: var(--primary-title-color);
-  transition: color 250ms ease;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-address-link {
@@ -279,7 +297,7 @@ body {
   font-weight: normal;
   line-height: 1.72;
   color: rgba(255, 255, 255, 0.6);
-  transition: color 250ms ease;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-address-map-link:hover,
@@ -335,7 +353,7 @@ body {
   align-items: center;
   justify-content: center;
 
-  transition: background-color 250ms ease;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .social-link-footer:hover,
@@ -443,6 +461,7 @@ body {
   flex-basis: calc(100% / var(--card-set-item) - var(--card-set-gap));
   margin-left: var(--card-set-gap);
   margin-top: var(--card-set-gap);
+  position: relative;
 }
 
 .benefits-title {
@@ -488,25 +507,14 @@ body {
   color: var(--secondaty-title-color);
 }
 
-.activity-img {
-  width: 370px;
-  height: 294px;
-  left: 215px;
-  top: 1061px;
-}
-
-.activity-name-block {
-  position: relative;
-}
-
 .activity-name {
-  width: 370px;
+  width: 100%;
   height: 70px;
   bottom: 0;
 
   text-transform: uppercase;
   font-size: 14px;
-  line-height: 16px;
+  /* line-height: 16px; */
   color: var(--primary-white-color);
 
   background-color: rgba(47, 48, 58, 0.8);
@@ -593,7 +601,7 @@ body {
   width: 20px;
   height: 20px;
   fill: var(--icon-color);
-  transition: fill 250ms ease;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .social-link {
@@ -604,7 +612,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background-color 250ms ease;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .social-link:hover,
@@ -634,7 +642,8 @@ body {
 
   color: var(--icon-color);
 
-  transition: color 250ms ease;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* постоянные клиенты */
@@ -682,7 +691,8 @@ body {
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
 
-  transition: color 250ms ease;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .filter-list {
@@ -703,7 +713,8 @@ body {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
 
-.text-item:hover .top-text {
+.examples-link:hover .top-text,
+.examples-link:focus .top-text {
   transform: translateY(0);
 }
 
@@ -725,7 +736,7 @@ body {
 
   position: absolute;
   transform: translateY(100%);
-  transition: transform 250ms ease;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
   padding: 63px 24px;
 }
 
