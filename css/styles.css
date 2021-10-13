@@ -461,7 +461,6 @@ body {
   flex-basis: calc(100% / var(--card-set-item) - var(--card-set-gap));
   margin-left: var(--card-set-gap);
   margin-top: var(--card-set-gap);
-  position: relative;
 }
 
 .benefits-title {
@@ -495,6 +494,10 @@ body {
 
 .activity-item {
   margin-right: 30px;
+}
+
+.activity .flex-item {
+  position: relative;
 }
 
 .activity-title {
@@ -539,8 +542,6 @@ body {
 }
 
 .team-item {
-  flex-basis: calc(100% / 4 - 30px);
-  margin-right: 30px;
   background: #ffffff;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
